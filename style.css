@@ -1,0 +1,344 @@
+/* Skin, Dark Pink Theme, Glow, Light Pink Backgrounds, Responsive */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffcce6, #ffe4f2, #ffd6eb);
+    color: white;
+    animation: fadeInBody 1.5s ease, bgMove 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #c71585;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 0 15px rgba(199, 21, 133, 0.5);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-shadow: 0 0 8px white;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px #c71585;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #ffe0f0;
+    text-shadow: 0 0 8px white;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #c71585 0%, #ffcce6 100%);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: inset 0 0 30px #c71585;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: white; /* Plain white text for visibility */
+    text-shadow: 0 0 10px #c71585;
+    animation: bounceIn 1.5s ease;
+}
+
+.hero-text p {
+    font-size: 18px;
+    animation: fadeInText 2s ease forwards;
+    animation-delay: 1s;
+    text-shadow: 0 0 10px white;
+}
+
+/* Image Glow */
+.hero-image .image-border {
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 25px 12px #c71585;
+    animation: fixedGlow 2s infinite alternate;
+    display: inline-block;
+}
+
+.hero-image img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Sections */
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: white; /* Plain white text for visibility */
+    text-shadow: 0 0 10px #c71585;
+    animation: bounceIn 1.5s ease;
+}
+
+.section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #c71585; /* Dark Pink Background */
+    border: 2px solid #ff69b4;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(199, 21, 133, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(199, 21, 133, 0.7);
+}
+
+.section h2 {
+    color: white;
+    text-shadow: 0 0 5px hotpink;
+}
+
+.section p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeInText 2s ease forwards;
+    animation-delay: 0.5s;
+    color: white;
+}
+
+
+/* Work List */
+.work-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 204, 230, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.work-list li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 3px solid #c71585;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    text-shadow: 0 0 3px #c71585;
+}
+
+.work-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 15px #c71585;
+    background-color: #ffd6eb;
+    border-left-color: #a0146d;
+    color: #800040;
+}
+
+/* Sparkle Background */
+.sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#c71585 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    pointer-events: none;
+    animation: sparkleMove 30s linear infinite;
+}
+
+/* Animations */
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fixedGlow {
+    from { box-shadow: 0 0 25px 12px #c71585; }
+    to { box-shadow: 0 0 35px 18px #c71585; }
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes sparkleMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .hero-image img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .section {
+        margin: 30px 15px;
+        padding: 15px;
+    }
+
+    .work-list li {
+        padding-left: 8px;
+    }
+}
+.work-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.work-list a:hover {
+    color: #ffe0f0;
+    text-shadow: 0 0 8px white;
+}
+/* Styling for 'Things I Can Do for You' Section */
+.section ul.work-list li::before {
+    content: "★";
+    color: #ff69b4;
+    margin-right: 10px;
+    font-size: 16px;
+    text-shadow: 0 0 5px #c71585;
+}
+
+.section ul.work-list li {
+    background-color: rgba(255, 204, 230, 0.15);
+    border-left: 4px solid #c71585;
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    text-shadow: 0 0 2px #c71585;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    list-style: none;
+}
+
+.section ul.work-list li:hover {
+    transform: translateX(8px);
+    background-color: #ffd6eb;
+    box-shadow: 0 0 15px #c71585;
+    color: #800040;
+    text-shadow: none;
+}
+
+.section ul.work-list li strong {
+    color: #ffe0f0;
+    text-shadow: 0 0 5px hotpink;
+    font-weight: bold;
+}
